@@ -4,11 +4,11 @@
     <p>Download the ToDo table from Service Now and upload it.</p>
   </div>
   <div class="home-box-form">
-    <form action="" class="home-form" method="POST">
+    <form action="/upload" class="home-form" method="POST" enctype="multipart/form-data">
       <div class="home-form-select-box">
-        <select name="" id="" class="home-form-select">
+        <select name="selectOpco" id="" class="home-form-select">
           {{#each populations}}
-          <option value="">{{opco}}</option>
+          <option value="{{opco}}">{{opco}}</option>
           {{/each}}
         </select>
         <div class="form-select-icon">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="home-form-file">
-        <input type="file" name="" id="file" required/>
+        <input type="file" name="file" id="file" required/>
         <label for="file">
           <i class="fa-solid fa-folder-open"> </i>
           &nbsp; Choose a File
