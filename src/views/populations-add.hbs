@@ -1,0 +1,83 @@
+<div class="popul-box">
+  <div class="home-box-title">
+    <h1>Create a new Population</h1>
+    <p>If you need to enter several values separate them with a comma, for
+      example: (-1,-4,-2)</p>
+  </div>
+  <div class="popul-form-box home-box-form">
+    <form action="/populations/add" method="POST" class="popul-form home-form">
+      <div class="popul-form-input-box">
+        <div class="popul-form-left">
+          <input
+            type="text"
+            name="opco"
+            id="opco"
+            placeholder="Opco Name"
+            required
+          />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Population Name"
+            required
+          />
+          <input
+            type="text"
+            name="workerType"
+            id="workerType"
+            placeholder="Worker Type"
+          />
+          <input
+            type="text"
+            name="workerLocation"
+            id="workerLocation"
+            placeholder="Work Location"
+          />
+          <input
+            type="text"
+            name="lineManager"
+            id="lineManager"
+            placeholder="Line Manager Flag"
+          />
+          <input
+            type="text"
+            name="reportingEntity"
+            id="reportingEntity"
+            placeholder="Reporting Entity"
+          />
+        </div>
+        <div class="popul-form-right">
+          <input
+            type="text"
+            name="keyPosition"
+            id="keyPosition"
+            placeholder="Key Position Indicator"
+          />
+          <input
+            type="text"
+            name="organizationLevel"
+            id="organizationLevel"
+            placeholder="Organization Level"
+          />
+          <input
+            type="text"
+            name="functionGlobal"
+            id="functionGlobal"
+            placeholder="Function (Global)"
+          />
+          <input
+            type="text"
+            name="subfunction"
+            id="subfunction"
+            placeholder="Subfunction"
+          />
+          <textarea name="job" id="job" placeholder="Jobs"></textarea>
+        </div>
+      </div>
+      <div class="home-form-btn">
+        <button>Send</button>
+      </div>
+    </form>{{!  }}
+  </div>
+</div>

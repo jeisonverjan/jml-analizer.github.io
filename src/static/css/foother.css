@@ -1,0 +1,43 @@
+footer {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    width: 100%;
+    height: 15rem;
+    background-color: var(--navbar-bg);
+    font-size: 2rem;
+}
+
+.footer-left {
+    text-align: center;
+    font-style: italic;
+    font-family: monospace;
+}
+
+.fa-chart-pie {
+    font-size: 8rem;
+    color: var(--unisys-logo);
+    margin-bottom: 0.5rem;
+}
+
+.footer-right {
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+.footer-right ul {
+    display: flex;
+    justify-content: space-around;
+    font-size:xx-large;
+    margin-bottom: 0.5rem;
+}
+
+.fa-brands {
+    color: var(--body-bg-second);
+}
+.fa-brands:hover {
+    filter: brightness(0.7);
+}

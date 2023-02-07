@@ -1,0 +1,40 @@
+<div class="home-box">
+  {{#if populations}}
+    <div class="home-box-title">
+      <h1>All Populations</h1>
+      <p>Use this board to update or delete Populations.</p>
+    </div>
+    <div class="populations-box">
+      <table class="popul-table">
+        <thead>
+          <tr>
+            <th>Opco</th>
+            <th>Name</th>
+            <th colspan="2">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each populations}}
+            <tr>
+              <td>{{opco}}</td>
+              <td>{{name}}</td>
+              <td><a
+                  class="popul-table-btn-update"
+                  href="/population/{{_id}}/update"
+                >Update</a></td>
+              <td><a
+                  class="popul-table-btn-delete"
+                  href="/population/{{_id}}/delete"
+                >Delete</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{else}}
+    <div class="home-box-title">
+      <h1>There is no tasks to show</h1>
+      <img src="/icons/empty.svg" alt="No task Icon"/>
+    </div>
+  {{/if}}
+</div>

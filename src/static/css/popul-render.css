@@ -1,0 +1,48 @@
+.popul-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: var(--basic-text);
+    color: var(--basic-text);
+}
+
+.popul-table tr:hover {
+    background-color: rgb(234, 232, 232);
+}
+
+.popul-table th {
+    padding: 1rem;
+}
+
+.popul-table th {
+    background-color: var(--navbar-bg);
+}
+
+.popul-table td {
+    color: var(--navbar-bg);
+    border-bottom: 1px solid var(--navbar-bg);
+}
+
+.popul-table-btn-update,
+.popul-table-btn-delete {
+    display: block;
+    padding: 1rem;
+    color: black;
+}
+
+.popul-table-btn-update:hover {
+    color: var(--message-success);
+    font-weight: bold;
+}
+
+.popul-table-btn-delete:hover {
+    color: var(--message-error);
+    font-weight: bold;
+}
+
+.home-box-title img {
+    margin-top: 1rem;
+    width: 8rem;
+}

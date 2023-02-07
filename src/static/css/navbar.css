@@ -1,0 +1,35 @@
+.main-logo {
+    max-width: 200px;
+    display: inline-block;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.navlist {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+.navlist li a {
+    font-size: 2rem;
+    color: var(--basic-text);
+    display: block;
+    padding: 1rem;
+}
+
+.navlist li a:hover {
+    color: var(--unisys-logo);
+}
+
+@media screen and (max-width: 600px) {
+    .navlist {
+        flex-direction: column;
+    }
+}

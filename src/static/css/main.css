@@ -1,0 +1,50 @@
+:root {
+    --body-bg-main: #373636;
+    --body-bg-second: #949c9f;
+    /* --body-bg-main: #8BC6EC;
+    --body-bg-second: #9599E2; */
+    --home-form-bg-main: #08AEEA;
+    --home-form-bg-second: #2AF598;
+    --navbar-bg: #000;
+    --basic-text: #fff;
+    --unisys-logo: #2AF598;
+    --home-form-input-icon-bg: rgb(45, 44, 44);
+    --home-form-input-bg: rgb(24, 23, 23);
+    --popul-form-input-border: #2aa0f5;
+    --popul-from-input-shadow: #719ECE;
+    --message-success: rgb(108, 186, 108);
+    --message-error: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; /* 1 rem = 10 px */
+}
+
+body {
+    background-color: var(--body-bg-main);
+    background-image: linear-gradient(135deg, var(--body-bg-main) 0%, var(--body-bg-second) 100%);
+    font-family: "Poppins", sans-serif;
+    color: var(--basic-text);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea {
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+}
