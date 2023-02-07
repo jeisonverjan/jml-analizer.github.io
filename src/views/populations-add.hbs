@@ -5,14 +5,35 @@
       example: (-1,-4,-2)</p>
   </div>
   <div class="popul-form-box home-box-form">
-    <form action="/populations/add" method="POST" class="popul-form home-form">
+    <form action="{{endPoint}}/{{popul._id}}" method="POST" class="popul-form home-form">
       <div class="popul-form-input-box">
         <div class="popul-form-left">
+          {{#if popul}}
           <input
             type="text"
             name="opco"
             id="opco"
             placeholder="Opco Name"
+            value="{{popul.opco}}"
+            required
+            disabled
+          />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Population Name"
+            required
+            value="{{popul.name}}"
+            disabled
+          />
+          {{else}}
+          <input
+            type="text"
+            name="opco"
+            id="opco"
+            placeholder="Opco Name"
+            value="{{popul.opco}}"
             required
           />
           <input
@@ -21,30 +42,36 @@
             id="name"
             placeholder="Population Name"
             required
+            value="{{popul.name}}"
           />
+          {{/if}}
           <input
             type="text"
             name="workerType"
             id="workerType"
             placeholder="Worker Type"
+            value="{{popul.workerType}}"
           />
           <input
             type="text"
             name="workerLocation"
             id="workerLocation"
             placeholder="Work Location"
+            value="{{popul.workerLocation}}"
           />
           <input
             type="text"
             name="lineManager"
             id="lineManager"
             placeholder="Line Manager Flag"
+            value="{{popul.lineManager}}"
           />
           <input
             type="text"
             name="reportingEntity"
             id="reportingEntity"
             placeholder="Reporting Entity"
+            value="{{popul.reportingEntity}}"
           />
         </div>
         <div class="popul-form-right">
@@ -53,26 +80,30 @@
             name="keyPosition"
             id="keyPosition"
             placeholder="Key Position Indicator"
+            value="{{popul.keyPosition}}"
           />
           <input
             type="text"
             name="organizationLevel"
             id="organizationLevel"
             placeholder="Organization Level"
+            value="{{popul.organizationLevel}}"
           />
           <input
             type="text"
             name="functionGlobal"
             id="functionGlobal"
             placeholder="Function (Global)"
+            value="{{popul.functionGlobal}}"
           />
           <input
             type="text"
             name="subfunction"
             id="subfunction"
             placeholder="Subfunction"
+            value="{{popul.subfunction}}"
           />
-          <textarea name="job" id="job" placeholder="Jobs"></textarea>
+          <textarea name="job" id="job" placeholder="Jobs">{{popul.job}}</textarea>
         </div>
       </div>
       <div class="home-form-btn">

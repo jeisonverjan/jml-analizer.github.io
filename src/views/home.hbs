@@ -7,10 +7,9 @@
     <form action="" class="home-form" method="POST">
       <div class="home-form-select-box">
         <select name="" id="" class="home-form-select">
-          <option value="">Select an Option</option>
-          <option value="">Peru</option>
-          <option value="">Ecuador</option>
-          <option value="">Brazil</option>
+          {{#each populations}}
+          <option value="">{{opco}}</option>
+          {{/each}}
         </select>
         <div class="form-select-icon">
           <i class="fa-solid fa-caret-down"></i>

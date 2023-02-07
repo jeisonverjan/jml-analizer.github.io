@@ -6,6 +6,7 @@
     text-align: center;
     background-color: var(--basic-text);
     color: var(--basic-text);
+    text-transform: capitalize;
 }
 
 .popul-table tr:hover {
@@ -14,11 +15,9 @@
 
 .popul-table th {
     padding: 1rem;
-}
-
-.popul-table th {
     background-color: var(--navbar-bg);
 }
+
 
 .popul-table td {
     color: var(--navbar-bg);

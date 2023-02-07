@@ -27,11 +27,37 @@ export const createPopulation = async (req, res) => {
     }
 }
 
-export const deletePopulation = async(req, res) => {
+export const deletePopulation = async (req, res) => {
     try {
-        const {id} = req.params
+        const { id } = req.params
         await Population.findByIdAndDelete(id)
         req.flash('success_msg', 'Population deleted successfully!')
+        res.redirect('/')
+    } catch (error) {
+        req.flash('error_msg', error)
+    }
+}
+
+export const updatePopulation = async (req, res) => {
+    try {
+        const popul = await Population.findById(req.params.id).lean()
+        res.render('populations-add', { popul: popul, endPoint: '/population/update' })
+    } catch (error) {
+        req.flash('error_msg', error)
+    }
+}
+
+export const updatePopulationPost = async (req, res) => {
+    try {
+        const { id } = req.params
+        let newPopulation = {}
+        for (const ele in req.body) {
+            if (req.body[ele]) {
+                newPopulation[ele] = req.body[ele]
+            }
+        }
+        await Population.findByIdAndUpdate(id, newPopulation)
+        req.flash('success_msg', 'Population updated successfully!')
         res.redirect('/')
     } catch (error) {
         req.flash('error_msg', error)
