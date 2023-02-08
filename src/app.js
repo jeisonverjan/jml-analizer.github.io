@@ -12,7 +12,7 @@ export const app = express()
 
 // App settings
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+export const __dirname = path.dirname(__filename)
 
 // view engine
 app.set("views", path.join(__dirname, 'views'))
