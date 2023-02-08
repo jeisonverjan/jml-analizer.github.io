@@ -1,10 +1,7 @@
 import { Router } from 'express'
-import Population from '../models/populations.js'
 import { renderHome } from '../controllers/index.controller.js'
 import { createPopulation, deletePopulation, updatePopulation, updatePopulationPost } from '../controllers/population.controller.js'
-import { __dirname } from '../app.js'
-import path from 'path'
-import fs from 'fs-extra'
+import { analyzeFile } from '../controllers/analyzer.controller.js'
 
 // Router init
 const router = Router()
@@ -30,22 +27,6 @@ router.get('/population/:id/update', updatePopulation)
 router.post('/population/update/:id', updatePopulationPost)
 
 // Upload file to analyze
-router.post('/upload', (req, res)=>{
-
-    if (req.file.mimetype != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-        req.flash('error_msg', 'Enter a valid file')
-        res.redirect('/')
-        const pathFile = path.join(__dirname, '/static/uploads/', req.file.filename)
-        fs.remove(pathFile, ()=>{
-            console.log(pathFile)
-        })
-        return
-    } else {
-        console.log(req.file)
-        console.log(req.body.selectOpco)
-        console.log(__dirname)
-        res.send('uploaded')
-    }
-})
+router.post('/upload', analyzeFile)
 
 export default router

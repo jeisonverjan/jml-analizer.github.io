@@ -20,27 +20,27 @@ const populationSchema = new Schema({
         trim: true,
         lowercase: true
     },
-    workerLocation: {
+    workLocation: {
         type: String,
         trim: true,
         lowercase: true
     },
-    lineManager: {
+    lineManagerFlag: {
         type: String,
         trim: true,
         lowercase: true
     },
-    reportingEntity: {
+    reportingentity: {
         type: String,
         trim: true,
         lowercase: true
     },
-    keyPosition: {
+    keyPositionIndicator: {
         type: String,
         trim: true,
         lowercase: true
     },
-    organizationLevel: {
+    organizationalLevel: {
         type: String,
         trim: true,
         lowercase: true
