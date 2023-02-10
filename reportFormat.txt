@@ -1,0 +1,40 @@
+Se recibieron ${totalRecords} registros, de los cuales ${totalJoiners} son Joiners y ${totalLeavers} son Leavers.
+
+De los ${totalRecords} registrs recibidos, se generarion automaticamente ${totalGenerados}, una efectividad del ${totalGeneradosPercent}.
+
+De los ${totalRecords} registros recibidos, no se genero automaticamente el ticket en ${TotalNoGenerados}, lo que equicale al ${totalNoGeneradosPercent}.
+
+De los ${totalNoGenerados} no generados, se ha logrado identificar las siguientes fallas:
+
+{
+sinOrganizationalLevel: 5,
+sinFunctionGlobal: 2,
+sinKeyPosition: 1
+.
+.
+.
+}
+
+A continuacion se muestra el detalle de los registros los cuales no generaron autoamticamente ticket en Service Now:
+
+user, userID, OLevel, Function, subfuction . . .
+1657 ADVER,   ok           ok         fail - empty
+
+
+wbData item:
+
+{
+  user: '1663189',
+  userADID: 'MARTIF80',
+  processType: 'Joiner',
+  status: 'Ignore',
+  serviceNowRequest: '',
+  organizationalLevel: '',
+  functionGlobal: 'C',
+  reportingentity: 'PE001RE',
+  workerType: 'Office',
+  lineManagerFlag: '',
+  keyPositionIndicator: '',
+  subfunction: 'C11',
+  workLocation: 'Lima Office (34820)'
+}

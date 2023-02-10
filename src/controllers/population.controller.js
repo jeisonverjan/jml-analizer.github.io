@@ -50,9 +50,11 @@ export const updatePopulation = async (req, res) => {
 export const updatePopulationPost = async (req, res) => {
     try {
         const { id } = req.params
+        let currentPopulation = await Population.findById(id)
+        const currentPopulationKeys = Object.keys(currentPopulation._doc)
         let newPopulation = {}
         for (const ele in req.body) {
-            if (req.body[ele]) {
+            if (req.body[ele] || currentPopulationKeys.includes(ele)) {
                 newPopulation[ele] = req.body[ele]
             }
         }
@@ -60,6 +62,7 @@ export const updatePopulationPost = async (req, res) => {
         req.flash('success_msg', 'Population updated successfully!')
         res.redirect('/')
     } catch (error) {
-        req.flash('error_msg', error)
+        req.flash('error_msg', error.message)
+        res.redirect('/')
     }
 }
