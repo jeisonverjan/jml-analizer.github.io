@@ -33,7 +33,7 @@ export const analyzeFile = async (req, res) => {
             if (isValidHeaders(populationKeys, wbHeaders)) {
                 res.send(wbData)
 
-                analyzeData(wbData, opcoPopulation)
+                analyzeData(wbData, opcoPopulation, populationKeys)
                 fs.remove(pathFile)
                 return
             } else {

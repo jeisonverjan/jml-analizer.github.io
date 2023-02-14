@@ -1,7 +1,7 @@
 import XLSX from 'xlsx'
 
 export const receiveFile = (pathFile) => {
-    let wb = XLSX.readFile(pathFile)
+    let wb = XLSX.readFile(pathFile, {cellDates:true})
     let wbSheetsNames = wb.SheetNames
     let ws = wb.Sheets[wbSheetsNames[0]]
     
