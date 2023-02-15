@@ -26,7 +26,8 @@ router.get('/population/:id/update', updatePopulation)
 // Update Population POST
 router.post('/population/update/:id', updatePopulationPost)
 
-// Upload file to analyze
+// Upload file - analyze data and show analysis
 router.post('/upload', analyzeFile)
+
 
 export default router

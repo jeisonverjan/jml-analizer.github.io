@@ -22,12 +22,12 @@
 .popul-table td {
     color: var(--navbar-bg);
     border-bottom: 1px solid var(--navbar-bg);
+    padding: 1rem;
 }
 
 .popul-table-btn-update,
 .popul-table-btn-delete {
     display: block;
-    padding: 1rem;
     color: black;
 }
 

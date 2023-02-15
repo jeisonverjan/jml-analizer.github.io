@@ -1,0 +1,80 @@
+.report-box-main {
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  max-width: 80%;
+  border-radius: 1rem;
+  background-color: var(--home-form-bg-main);
+  background-image: linear-gradient(
+    0deg,
+    var(--home-form-bg-main) 0%,
+    var(--home-form-bg-second) 100%
+  );
+  color: black;
+  font-size: larger;
+}
+
+.home-box-title {
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-box-title h1 {
+  letter-spacing: 1px;
+}
+
+.home-box-title p {
+  padding: 1rem;
+  font-size: larger;
+}
+
+.report-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  font-weight: 300;
+  font-size: large;
+  text-align: justify;
+}
+
+.report-header {
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+
+.report-totalItemIssue {
+  text-transform: capitalize;
+  margin-left: 5rem;
+}
+
+.report-totalItemIssue span {
+  font-weight: bold;
+}
+
+.report-noJobs ul {
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.report-table {
+  width: 100%;
+}
+
+.table-false-value{
+  background-color: rgb(240, 152, 152);
+}
+
+/* .table-true-value {
+  background-color: rgb(163, 232, 163);
+} */
+
+@media screen and (max-width: 1400px) {
+  .report-box-main {
+      max-width: 100%;
+      overflow-x: auto;
+  }
+}

@@ -31,9 +31,12 @@ export const analyzeFile = async (req, res) => {
 
             // If the header of the file match to Population selected and have the required columns
             if (isValidHeaders(populationKeys, wbHeaders)) {
-                res.send(wbData)
+                //res.send(wbData)
 
-                analyzeData(wbData, opcoPopulation, populationKeys)
+                const report = analyzeData(wbData, opcoPopulation, populationKeys)
+
+                res.render('analysisReport', {report:report})
+                
                 fs.remove(pathFile)
                 return
             } else {

@@ -1,0 +1,51 @@
+<div class="report-box-main">
+  <div class="home-box-title">
+    <h1>Analysis Report</h1>
+    <p>The following are the results of the information analysis.</p>
+  </div>
+  <div class="report-box">
+    <div class="report-header">
+      <p>{{report.reportHeader}}</p>
+    </div>
+    <div class="report-totalItemIssue">
+      <ul>
+        {{#each report.totalItemIssue}}
+          <li><span>{{@key}}:</span> {{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="report-noJobs">
+      <p>Additionally, the following job codes were identified as unregistered
+        in the automation:</p>
+      <ul>
+        {{#each report.noJobs}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="report-recordResult">
+      <table class="popul-table report-table">
+        <thead>
+          <tr>
+            {{#each (lookup report.recordsResult 0) as |value key|}}
+              <th>{{key}}</th>
+            {{/each}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each report.recordsResult as |record|}}
+            <tr>
+              {{#each record as |value|}}
+                {{#if value}}
+                <td class="table-true-value">{{value}}</td>
+                {{else}}
+                <td class="table-false-value">{{value}}</td>
+                {{/if}}
+              {{/each}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
