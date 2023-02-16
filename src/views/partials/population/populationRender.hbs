@@ -25,6 +25,7 @@
               <td><a
                   class="popul-table-btn-delete"
                   href="/population/{{_id}}/delete"
+                  onclick="return confirm('Are you sure you want to delete this record?')"
                 >Delete</a></td>
             </tr>
           {{/each}}

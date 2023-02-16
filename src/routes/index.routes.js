@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { renderHome } from '../controllers/index.controller.js'
-import { createPopulation, deletePopulation, updatePopulation, updatePopulationPost } from '../controllers/population.controller.js'
+import { createPopulation, deletePopulation, updatePopulation, updatePopulationPost, renderPopulationForm } from '../controllers/population.controller.js'
 import { analyzeFile } from '../controllers/analyzer.controller.js'
 import { exportData } from '../controllers/exportData.controller.js'
 
@@ -11,10 +11,8 @@ const router = Router()
 // Home Page
 router.get('/', renderHome)
 
-// Create population form
-router.get('/populations', (req, res) => {
-    res.render('populations-add', { endPoint: '/populations/add' })
-})
+// Render population form
+router.get('/populations', renderPopulationForm)
 
 // Create Populations post
 router.post('/populations/add', createPopulation)

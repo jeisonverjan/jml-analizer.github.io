@@ -1,5 +1,9 @@
 import Population from '../models/populations.js'
 
+export const renderPopulationForm = (req, res) => {
+    res.render('populations-add', { endPoint: '/populations/add' })
+}
+
 export const createPopulation = async (req, res) => {
     try {
         const opcoName = req.body.opco.toLowerCase()
