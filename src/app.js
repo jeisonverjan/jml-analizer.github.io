@@ -1,5 +1,5 @@
 import express from 'express'
-import { engine } from 'express-handlebars'
+import expressHbs from 'express-handlebars'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import indexRoutes from './routes/index.routes.js'
@@ -16,10 +16,15 @@ export const __dirname = path.dirname(__filename)
 
 // view engine
 app.set("views", path.join(__dirname, 'views'))
-app.engine('hbs', engine({
+app.engine('hbs', expressHbs.engine({
     extname: "hbs"
 }))
 app.set('view engine', 'hbs')
+
+const hbs = expressHbs.create({})
+hbs.handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
+})
 
 // Middleware
 app.use(express.urlencoded({ extended: false }))

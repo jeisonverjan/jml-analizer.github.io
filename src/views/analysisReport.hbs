@@ -1,5 +1,9 @@
 <div class="report-box-main">
   <div class="home-box-title">
+    <form action="/export-data" class="home-box-export" method="POST">
+      <input type="hidden" name="recordsResult" value="{{json report.recordsResult}}">
+      <button class="export-btn">Export</button>
+    </form>
     <h1>Analysis Report</h1>
     <p>The following are the results of the information analysis.</p>
   </div>

@@ -2,6 +2,8 @@ import { Router } from 'express'
 import { renderHome } from '../controllers/index.controller.js'
 import { createPopulation, deletePopulation, updatePopulation, updatePopulationPost } from '../controllers/population.controller.js'
 import { analyzeFile } from '../controllers/analyzer.controller.js'
+import { exportData } from '../controllers/exportData.controller.js'
+
 
 // Router init
 const router = Router()
@@ -29,5 +31,7 @@ router.post('/population/update/:id', updatePopulationPost)
 // Upload file - analyze data and show analysis
 router.post('/upload', analyzeFile)
 
+// Export report
+router.post('/export-data', exportData)
 
 export default router

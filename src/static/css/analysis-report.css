@@ -16,8 +16,31 @@
 }
 
 .home-box-title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+}
+
+.home-box-export {
+  align-self: flex-end;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.home-box-export button {
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--basic-text);
+  background-color: var(--navbar-bg);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-box-export button:hover {
+  opacity: 0.7;
 }
 
 .home-box-title h1 {
@@ -55,9 +78,11 @@
 
 .report-noJobs ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   font-weight: bold;
   margin-top: 2rem;
+  text-align: justify;
 }
 
 .report-table {
@@ -76,5 +101,15 @@
   .report-box-main {
       max-width: 100%;
       overflow-x: auto;
+      border-radius: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .report-table td,  .report-table th {
+    font-size: smaller;
+    padding: 0.5rem;
   }
 }
