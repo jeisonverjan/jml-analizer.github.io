@@ -6,6 +6,7 @@ import indexRoutes from './routes/index.routes.js'
 import flash from 'connect-flash'
 import session from 'express-session'
 import multer from 'multer'
+import { SESSION_KEY } from './config/config.js'
 
 // Express App Init
 export const app = express()
@@ -29,7 +30,7 @@ hbs.handlebars.registerHelper('json', function(context) {
 // Middleware
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
-    secret: 'secret',
+    secret: SESSION_KEY,
     resave: true,
     saveUninitialized: true
 }))

@@ -35,7 +35,6 @@ export const exportData = (req, res) => {
 
     } catch (error) {
         req.flash('error_msg', error.message)
-        console.log(error)
     }
 
 }

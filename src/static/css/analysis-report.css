@@ -37,6 +37,8 @@
   background-color: var(--navbar-bg);
   border-radius: 5px;
   cursor: pointer;
+  border: 0;
+
 }
 
 .home-box-export button:hover {
