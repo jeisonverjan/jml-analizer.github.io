@@ -38,8 +38,15 @@ app.use(session({
     saveUninitialized: true
 }))
 app.use(flash())
+
+const storage = multer.diskStorage({
+    destination: os.tmpdir(),
+    limits: { fileSize: 4018592 }
+})
+
 app.use(multer({
     dest: os.tmpdir(),
+    storage: storage
 }).single('file'))
 
 // Global variables
