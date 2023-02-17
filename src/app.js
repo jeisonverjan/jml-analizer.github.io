@@ -7,6 +7,9 @@ import flash from 'connect-flash'
 import session from 'express-session'
 import multer from 'multer'
 import { SESSION_KEY } from './config/config.js'
+import os from 'os'
+
+
 
 // Express App Init
 export const app = express()
@@ -36,7 +39,7 @@ app.use(session({
 }))
 app.use(flash())
 app.use(multer({
-    dest: path.join(__dirname, 'static/uploads'),
+    dest: os.tmpdir(),
 }).single('file'))
 
 // Global variables

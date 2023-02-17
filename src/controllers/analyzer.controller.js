@@ -5,6 +5,7 @@ import Population from '../models/populations.js'
 import { receiveFile } from './functions/receiveFile.js'
 import { isValidHeaders } from './functions/isValidHeaders.js'
 import { analyzeData } from './functions/analyzeData.js'
+import os from 'os'
 
 export const analyzeFile = async (req, res) => {
     //Opco that user selected
@@ -12,7 +13,7 @@ export const analyzeFile = async (req, res) => {
     //Variable to only accept .xlsx files
     const mimetype = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     // file location
-    const pathFile = path.join(__dirname, '/static/uploads/', req.file.filename)
+    const pathFile = path.join(os.tmpdir(), req.file.filename)
     // Extract the population according what user selected from the DB
     const opcoPopulation = await Population.findOne({ opco: opco }).lean()
     // Extract the keys of the population in order to compare to wbHeaders, only filled keys

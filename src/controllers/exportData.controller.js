@@ -3,6 +3,7 @@ import { __dirname } from '../app.js'
 import path from 'path'
 import fs from 'fs-extra'
 import { nanoid } from 'nanoid'
+import os from 'os'
 
 export const exportData = (req, res) => {
 
@@ -14,7 +15,7 @@ export const exportData = (req, res) => {
         // file name
         const fileName = 'jml_report_' + uniqueCode + '.xlsx'
         // path route
-        const pathFile = path.join(__dirname, '/static/uploads/', fileName)
+        const pathFile = path.join(os.tmpdir(), fileName)
         // Convert json object into a excel file
         const worksheet = XLSX.utils.json_to_sheet(recordsResult)
         // Excel book init
