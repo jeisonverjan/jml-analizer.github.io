@@ -41,7 +41,7 @@ app.use(flash())
 
 const storage = multer.diskStorage({
     destination: os.tmpdir(),
-    limits: { fileSize: 4018592 }
+    limits: { fileSize: 4718592 }
 })
 
 app.use(multer({
